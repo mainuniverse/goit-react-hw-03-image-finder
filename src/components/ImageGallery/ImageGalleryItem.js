@@ -1,21 +1,26 @@
-import style from './ImageGalleryItem.module.css';
+import s from './ImageGalleryItem.module.css';
 import PropTypes from 'prop-types';
 
-const ImageGalleryItem = ({ webformatURL, onImgClick }) => {
+function ImageGalleryItem({ images, onOpenModal }) {
   return (
-    <li className={style.ImageGalleryItem}>
-      <img
-        src={webformatURL}
-        alt="img"
-        className={style.ImageGalleryItemImage}
-        onClick={onImgClick}
-      />
-    </li>
+    <>
+      {images.map(({ id, webformatURL, tags, largeImageURL }) => (
+        <li key={id} className={s.Item}>
+          <img
+            src={webformatURL}
+            alt={tags}
+            className={s.Image}
+            onClick={() => onOpenModal(largeImageURL, tags)}
+          />
+        </li>
+      ))}
+    </>
   );
-};
+}
 
 ImageGalleryItem.propTypes = {
-  webformatURL: PropTypes.string,
+  images: PropTypes.array,
+  onOpenModal: PropTypes.func,
 };
 
 export default ImageGalleryItem;

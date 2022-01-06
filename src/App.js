@@ -8,7 +8,7 @@ import ImageGallery from './components/ImageGallery/ImageGallery';
 import ImageGalleryItem from './components/ImageGallery/ImageGalleryItem';
 import Spinner from './components/Loader/Loader';
 import Modal from './components/Modal/Modal';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import s from './index.css';
 
 class App extends Component {
@@ -77,7 +77,7 @@ class App extends Component {
       modalImageSrcAlt,
     } = this.state;
     return (
-      <div className={s.app}>
+      <div className={s.App}>
         <Searchbar onSubmit={this.handleSearchbarSubmit} />
         {status === 'rejected' && <h2>{error.message}</h2>}
         {(status === 'resolved' || spinner === true) && (
@@ -92,7 +92,7 @@ class App extends Component {
         )}
         <div className={s.load_more}>
           {(status === 'resolved') & (images.length > 0) ? (
-            <Button onIncrement={this.fetchImages} text="Load more" />
+            <Button onClick={this.fetchImages} text="Load more" />
           ) : (
             (status === 'pending' || spinner === true) && <Spinner />
           )}
@@ -109,17 +109,3 @@ class App extends Component {
 }
 
 export default App;
-
-  // imgClick = largeImageURL => {
-  //   this.setState({
-  //     largeImage: largeImageURL,
-  //   });
-
-  //   this.toggleModal();
-  // };
-
-  // toggleModal = () => {
-  //   this.setState(({ showModal }) => ({
-  //     showModal: !showModal,
-  //   }));
-  // };

@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import s from './Button.module.css';
 
 const Button = ({ onClick }) => {
   return (
-    <div className="Button-wraper">
-      <button className="Button" type="button" onClick={onClick}>
+    <div className={s.wraper} >
+      <button className={s.button} type="button" onClick={onClick}>
         Load more
       </button>
     </div>
@@ -15,3 +16,4 @@ Button.propTypes = {
 };
 
 export default Button;
+

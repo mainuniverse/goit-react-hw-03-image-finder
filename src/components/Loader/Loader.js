@@ -1,7 +1,7 @@
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
-const LoaderComp = () => {
+const Spinner = () => {
   return (
     <div className="Button-wraper">
       <Loader
@@ -15,7 +15,7 @@ const LoaderComp = () => {
   );
 };
 
- export default LoaderComp;
+ export default Spinner;
 
 // import Loader from "react-loader-spinner";
 // export default class App extends React.Component {
@@ -23,7 +23,7 @@ const LoaderComp = () => {
 //   render() {
 //     return (
 //       <Loader
-//         type="Puff" "TailSpin"
+//         type="Puff" "TailSpin" "Watch"
 //         color="#00BFFF"
 //         height={100}
 //         width={100}

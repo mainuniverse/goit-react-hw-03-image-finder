@@ -1,26 +1,16 @@
-import ImageGalleryItem from './ImageGalleryItem';
+import s from './ImageGallery.module.css';
 import PropTypes from 'prop-types';
 
-const ImageGallery = ({ showGallery, onImgClick }) => {
+function ImageGallery({ children }) {
   return (
-    <ul className="ImageGallery">
-      {showGallery.map(({ id, webformatURL, largeImageURL }) => {
-        const handleItemClick = () => onImgClick(largeImageURL);
-        return (
-          <ImageGalleryItem
-            key={id}
-            webformatURL={webformatURL}
-            onImgClick={handleItemClick}
-          />
-        );
-      })}
-    </ul>
+    <div>
+      <ul className={s.gallery}>{children}</ul>
+    </div>
   );
-};
+}
 
 ImageGallery.propTypes = {
-  showGallery: PropTypes.array,
-  onImgClick: PropTypes.func,
+  children: PropTypes.node,
 };
 
 export default ImageGallery;
