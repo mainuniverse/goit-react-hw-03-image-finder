@@ -1,16 +1,17 @@
 import './App.css';
-import { fetchApi }from './services/api';
+import { fetchApi }from './services/ApiFetch';
 import React, { Component } from 'react';
 import Searchbar from './components/Search/Search';
 import Button from './components/Button/Button';
-//import Container from './components/Container/Container';
 import ImageGallery from './components/ImageGallery/ImageGallery';
 import ImageGalleryItem from './components/ImageGallery/ImageGalleryItem';
 import Spinner from './components/Loader/Loader';
 import Modal from './components/Modal/Modal';
-//import PropTypes from 'prop-types';
-import s from './index.css';
 
+import s from './index.css';
+//import PropTypes from 'prop-types';
+//import Container from './components/Container/Container';
+//import { fetchApi }from './services/api';
 class App extends Component {
   state = {
     searchValue: '',
